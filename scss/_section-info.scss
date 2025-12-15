@@ -1,0 +1,145 @@
+.section-info {
+    margin-top: 61px;
+    padding-top: 201px
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 155px;
+}
+
+.content-info {
+    margin-top: -100px;
+    span {
+        @include f-roboto;
+        @include text(20px, 500, 1.5, #1b75bb);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+
+    .info-title {
+        @include f-gelasio;
+        @include text(32px, 500, 1.4, #081f32);
+        width: 430px;
+        margin-top: 15px;
+    }
+
+    .btn {
+        @include button(137px, 56px, 15px 30px, #1b75bb);
+        @include f-roboto;
+        @include text(16px, 500, 1.6, #fff);
+        margin-top: 31px;
+    }
+}
+
+.video-wrapper {
+    position: relative;
+    width: fit-content; // щоб блок підлаштовувався під розмір
+    margin: 0 auto;
+    padding-bottom: 60px;
+
+    .video-img {
+        position: absolute;
+        z-index: 1;
+
+        &.back {
+            width: 228px;
+            height: 228px;
+            top: 170px;
+            left: -90px;
+            border-radius: none;
+        }
+
+        &.middle {
+            width: 484px;
+            top: -57px;
+            left: 98px;
+            opacity: 0.5;
+            border-radius: 10px;
+        }
+    }
+
+    .video-main {
+        position: relative;
+        z-index: 2;
+        border-radius: 10px;
+
+        img {
+            width: 630px;
+            height: 325px;
+            border-radius: 10px;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: url('../img/section-info-media/play-btn.svg') no-repeat center / cover;
+            cursor: pointer;
+            transition: 0.3s all;
+
+            &:hover {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+    }
+}
+
+@media all and (max-width: 820px) {
+    .section-info {
+            margin-top: 61px;
+            padding-top: 100px
+        }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-info {
+        .info-title {
+            width: 100%;
+        }
+    }
+
+    .video-wrapper {
+        .video-img {
+            display: none;
+        }
+
+        .video-main {
+            margin-bottom: -30px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .section-info {
+        padding-top: 50px;  
+    }
+
+    .content-info {
+        span {
+            @include text(16px, 500, 1.5, #1b75bb);
+        }
+
+        .info-title {
+            @include text(28px, 500, 1.4, #081f32);
+        }
+
+    }
+
+    .video-wrapper {
+        padding-bottom: 20px;
+    }
+}

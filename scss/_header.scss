@@ -1,0 +1,97 @@
+.header {
+    background-image: url(../img/header/bg_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding-bottom: 150px; 
+}
+
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: -20px;
+
+    img {
+        display: block;
+        width: 144px;
+        height: 144px;
+    }
+
+    span {
+        position: absolute;
+        left: 66px;
+        top: 49px;
+        white-space: nowrap;
+        @include f-gelasio;
+        @include text(24px, 500, 1.5, #081f32);
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.link {
+    @include f-gelasio;
+    @include text(16px, 500, 1.5, #081f32);
+    opacity: 0;
+    transition: all 0.2s ease-in;
+
+    span {
+            color: #1b75bb; 
+        }
+    &:hover {
+            color: #1b75bb; 
+        }
+}
+
+
+.btn {
+    @include button(134px, 54px, 15px 30px,);
+    @include f-gelasio;
+    @include text(16px, 500, 1.5, #fff);
+}
+
+
+@media all and (max-width: 480px) {
+    .header-block {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-right: 50px;
+        margin-bottom: -30px;
+    }
+    .nav {
+        gap: 10px;
+
+    }
+
+    .btn {
+        @include button(105px, 41px, 10px 20px,);
+        @include text(14px, 500, 1.5, #fff);
+    }
+}
+@media all and (max-width: 768px) {
+    .nav {
+        gap: 20px;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    .header-block {
+        gap: 20px;
+    }
+}
+
+
+
