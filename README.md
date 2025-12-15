@@ -7,7 +7,7 @@
 
 <h2>Демо версія</h2>
 <p>
-  <a href="hotel-booking-room.netlify.app" target="_blank">Переглянути демо</a>
+  <a href="https://hotel-booking-room.netlify.app/" target="_blank">Переглянути демо</a>
 </p>
 
 <h2>Функціонал проєкту</h2>
